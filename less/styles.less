@@ -1,34 +1,70 @@
-.parallax {
-	perspective: 1px; /*Pour créer un viewport 3D*/
-	height: 100vh;
-	overflow-x: hidden; /*Aucun déplacement horizontal*/
-	overflow-y: auto; /*Déplacement vertical uniquement*/
-	bacground-color: #40b822;
+/* demo styles
+--------------------------------------------- */
+
+* {
+	margin:0;
+	padding:0;
 }
 
-/*Occupe tout l'Espace du viewport*/
+body {
+	font: 100% / 1.5 Arial;
+}
+
+.parallax {
+	font-size: 200%;
+}
+
+/* add some padding to force scrollbars */
 .parallax__layer {
+	padding: 100vh 0;
+}
+
+/* centre the content in the parallax layers */
+.title {
 	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+/* Styles de base du Parallax
+--------------------------------------------- */
+
+.parallax {
+	-webkit-perspective-origin-x: 100%;
+	perspective-origin-x: 100%; /*Corriger le bug de l'overflow qui ne « hide » pas sur certains navigateurs.*/
+	height: 100vh;
+	overflow-x: hidden;
+	overflow-y: auto;
+	-webkit-perspective: 1px;
+	perspective: 1px;
 }
 
 .parallax__group {
 	position: relative;
 	height: 100vh;
 	transform-style: preserve-3d;
-	background-color: #d25930;
 }
 
-/*Sous-classe permettant de définir le niveau de profondeur
-Ce niveau de profondeur aura un impact sur la vitesse de déplacement des layers quand on défile.
-Plus l'élément est profond (éloigné) plus il se déplace lentement.*/
+.parallax__layer {
+	-webkit-transform-origin-x: 100%;
+	transform-origin-x: 100%; /*Corriger le bug de l'overflow qui ne « hide » pas sur certains navigateurs.*/
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
 .parallax__layer--base {
-	transform: translateX(0); /*Niveau plancher*/
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+	background-color: rgba(30, 125, 249, 0.5);
 }
 
 .parallax__layer--back {
-	transform: translateZ(-1px) scale(2); /*Niveau arrière-plan*/
+	-webkit-transform: translateZ(-1px) scale(2);
+	transform: translateZ(-1px) scale(2);
+	background-color: rgba(255, 160, 80, 0.5);
 }

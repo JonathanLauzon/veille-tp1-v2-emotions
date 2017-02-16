@@ -63,11 +63,32 @@ body {
 .parallax__layer--base {
 	-webkit-transform: translateZ(0);
 	transform: translateZ(0);
-	background-color: rgba(30, 125, 249, 0.5);
 }
 
 .parallax__layer--back {
 	-webkit-transform: translateZ(-1px) scale(2.02);
 	transform: translateZ(-1px) scale(2.02);
-	background-color: rgba(255, 160, 80, 0.5);
+}
+
+.parallax__group--1 {
+	z-index: 2;
+	.parallax__layer--base {
+		background-color: rgba(255, 0, 0, 0.2);
+}
+
+	.parallax__layer--back {
+		background-color: #fff;
+	}
+}
+
+.parallax__group--2 {
+	z-index: 1;
+	top: 100vh;
+	.parallax__layer--base {
+		background-color: rgba(0, 0, 255, 0.2);
+}
+
+	.parallax__layer--back {
+		background-color: #000;
+	}
 }

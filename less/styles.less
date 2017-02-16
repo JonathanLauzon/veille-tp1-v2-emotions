@@ -1,0 +1,34 @@
+.parallax {
+	perspective: 1px; /*Pour créer un viewport 3D*/
+	height: 100vh;
+	overflow-x: hidden; /*Aucun déplacement horizontal*/
+	overflow-y: auto; /*Déplacement vertical uniquement*/
+	bacground-color: #40b822;
+}
+
+/*Occupe tout l'Espace du viewport*/
+.parallax__layer {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.parallax__group {
+	position: relative;
+	height: 100vh;
+	transform-style: preserve-3d;
+	background-color: #d25930;
+}
+
+/*Sous-classe permettant de définir le niveau de profondeur
+Ce niveau de profondeur aura un impact sur la vitesse de déplacement des layers quand on défile.
+Plus l'élément est profond (éloigné) plus il se déplace lentement.*/
+.parallax__layer--base {
+	transform: translateX(0); /*Niveau plancher*/
+}
+
+.parallax__layer--back {
+	transform: translateZ(-1px) scale(2); /*Niveau arrière-plan*/
+}

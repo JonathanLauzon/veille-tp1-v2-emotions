@@ -60,22 +60,25 @@ body {
   -webkit-transform: translateZ(-1px) scale(2.02);
   transform: translateZ(-1px) scale(2.02);
 }
-.parallax__group--1 {
-  z-index: 2;
-}
 .parallax__group--1 .parallax__layer--base {
-  background-color: rgba(255, 0, 0, 0.2);
+  background-color: rgba(255, 0, 0, 0);
 }
 .parallax__group--1 .parallax__layer--back {
-  background-color: #fff;
-}
-.parallax__group--2 {
-  z-index: 1;
-  top: 100vh;
+  background-color: #000;
 }
 .parallax__group--2 .parallax__layer--base {
-  background-color: rgba(0, 0, 255, 0.2);
+  background-color: #fff;
 }
 .parallax__group--2 .parallax__layer--back {
-  background-color: #000;
+  top: 100vh;
+  background-color: rgba(0, 0, 255, 0.2);
+}
+/* Autres styles
+--------------------------------------------- */
+.jonathan-lauzon {
+  height: 79.166vh;
+  width: auto;
+  position: absolute;
+  bottom: 0;
+  left: calc(50vw - 28.888vh);
 }

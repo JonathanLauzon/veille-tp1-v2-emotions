@@ -80,13 +80,13 @@ body {
   width: auto;
   position: relative;
   margin-left: 50%;
-  margin-top: 50%;
+  margin-top: 50vh;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 /* Autres styles
 --------------------------------------------- */
-.jonathan-lauzon {
+.jonathan-lauzon-portail {
   height: 79.166vh;
   width: auto;
   position: absolute;

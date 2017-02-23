@@ -282,11 +282,12 @@ body {
 		fill: #efefef;
 	}
 
-	.cls-10, .cls-11 {
+	.cls-10 {
 		fill: #c6c6c6;
 	}
 
-	.cls-11 {
+	#bouton_chemise {
+		fill: #c6c6c6;
 		stroke: #848484;
 		stroke-miterlimit: 10;
 		stroke-width: 0.5px;
@@ -320,7 +321,12 @@ body {
 		fill: #e5d1c7;
 	}
 
-	.cls-20 {
+	.sourcils {
+		fill: #a0835d;
+		transition: transform 0.5s;
+	}
+
+	#cheveux {
 		fill: #a0835d;
 	}
 
@@ -346,6 +352,12 @@ body {
 		fill: spin(@couleur-flash-1 , 20*(360 / 24));
 		stroke: spin(@couleur-flash-1 , 20*(360 / 24));
 	}
+	#sourcil_gauche {
+		transform: rotate(-5deg) translate(-18px, 8px);
+	}
+	#sourcil_droite {
+		transform: rotate(5deg) translate(16px, -45px);
+	}
 }
 
 .jonathan--neutre {
@@ -353,12 +365,21 @@ body {
 		fill: spin(@couleur-flash-1 , 15*(360 / 24));
 		stroke: spin(@couleur-flash-1 , 15*(360 / 24));
 	}
+	#sourcil_droite {
+		transform: translate(0px, -10px);
+	}
 }
 
 .jonathan--triste {
 	#g_cadre #cercle {
 		fill: spin(@couleur-flash-1 , 12*(360 / 24));
 		stroke: spin(@couleur-flash-1 , 12*(360 / 24));
+	}
+	#sourcil_gauche {
+		transform: rotate(-10deg) translate(-35px, 45px);
+	}
+	#sourcil_droite {
+		transform: rotate(3deg) translate(3px, -25px);
 	}
 }
 

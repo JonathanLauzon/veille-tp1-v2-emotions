@@ -104,31 +104,261 @@ body {
 
 /* Styles des SVG
 --------------------------------------------- */
+#logo {
+	display: block;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	max-width: 5vw;
+	height: auto;
+	#arriere-plan {
+		fill: #0d1f2c;
+	}
+
+	#avant-plan {
+		fill: #2a4d66;
+	}
+}
+@media screen and (max-width: 900px) {
+	#logo {
+		max-width: 10vw;
+	}
+}
+@media screen and (max-width: 500px) {
+	#logo {
+		max-width: 15vw;
+	}
+}
+
+#bg {
+	height: 100vh;
+	width: auto;
+	position: absolute;
+	display: block;
+	top: 0;
+	bottom: 0;
+	#colline {
+		fill: #80493c;
+		stroke: #80493c;
+		stroke-width: 1px;
+	}
+
+	#tour-gauche {
+		fill: #565656;
+		stroke: #565656;
+		stroke-width: 1px;
+	}
+
+	#tour-droite {
+		fill: #484848;
+		stroke: #484848;
+		stroke-width: 1px;
+	}
+
+	#rempart {
+		fill: #404040;
+		stroke: #404040;
+		stroke-width: 1px;
+	}
+
+	#toit-gauche {
+		fill: #2a4d66;
+		stroke: #223f51;
+		stroke-width: 1px;
+	}
+
+	#toit-droite {
+		fill: #223f51;
+		stroke: #223f51;
+		stroke-width: 1px;
+	}
+
+	#porte {
+		fill: #ad4d3a;
+	}
+}
+
+.fleche-bas {
+	display: block;
+	position: relative;
+	margin-top: 85vh;
+	max-height: 5vh;
+	width: auto;
+	margin-left: auto;
+	margin-right: auto;
+	stroke: #fff;
+	stroke-width: 5px;
+	fill: none;
+	cursor: pointer;
+	animation: descente 1s 0s infinite ease-out;
+	&:hover {
+		animation: none;
+		max-height: 7vh;
+	}
+}
+
+@keyframes descente {
+	from {
+		margin-top: 85vh;
+		opacity: 1;
+	}
+	to {
+		margin-top: 87vh;
+		opacity: 0.2;
+	}
+}
+
+.fleche-haut {
+	display: block;
+	position: relative;
+	margin-top: 52.5vh;
+	max-height: 5vh;
+	width: auto;
+	margin-left: auto;
+	margin-right: auto;
+	stroke: #000;
+	stroke-width: 5px;
+	fill: none;
+	cursor: pointer;
+	animation: montee 1s 0s infinite ease-out;
+	&:hover {
+		animation: none;
+		max-height: 7vh;
+	}
+}
+
+@keyframes montee {
+	from {
+		margin-top: 52.5vh;
+		opacity: 1;
+	}
+	to {
+		margin-top: 50.5vh;
+		opacity: 0.2;
+	}
+}
+
 .jonathan-flat {
 	max-height: 50vh;
 	width: auto;
-	/* position: relative;
-	margin-left: 50%;
-	margin-top: 50vh;
-	-webkit-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%); */
+	.masque {
+		fill: none;
+	}
+
+	.fond-cercle {
+		fill: #25bfd8;
+		stroke: #25bfd8;
+		stroke-width: 20px;
+		transform: rotate(45deg);
+		transform-origin: 50% 50%;
+		transition: fill 1s, stroke 1s;
+	}
+
+	.cls-3 {
+		fill: #a3a3a3;
+	}
+
+	.cls-4 {
+		fill: #ddc8c0;
+	}
+
+	.cls-5 {
+		fill: #d6c1ba;
+	}
+
+	.cls-6 {
+		clip-path: url(#clip-path);
+	}
+
+	.cls-7 {
+		opacity: 0.04;
+	}
+
+	.cls-8 {
+		fill: #fff;
+	}
+
+	.cls-9 {
+		fill: #efefef;
+	}
+
+	.cls-10, .cls-11 {
+		fill: #c6c6c6;
+	}
+
+	.cls-11 {
+		stroke: #848484;
+		stroke-miterlimit: 10;
+		stroke-width: 0.5px;
+	}
+
+	.cls-12 {
+		fill: #3f332f;
+	}
+
+	.cls-13 {
+		fill: #59433d;
+	}
+
+	.cls-14 {
+		fill: #f7f7f7;
+	}
+
+	.cls-15 {
+		fill: #edd9ce;
+	}
+
+	.cls-16 {
+		fill: #ceafb2;
+	}
+
+	.cls-17 {
+		fill: #d39fa9;
+	}
+
+	.peau-visage-droite {
+		fill: #e5d1c7;
+	}
+
+	.cls-20 {
+		fill: #a0835d;
+	}
+
+	.cls-21 {
+		fill: #0a0a0c;
+	}
+
+	.cls-22 {
+		fill: #e4e8ea;
+	}
+
+	.cls-23 {
+		clip-path: url(#clip-path-2);
+	}
+
+	.cls-24 {
+		clip-path: url(#clip-path-3);
+	}
 }
 
 .jonathan--content {
 	#g_cadre #cercle {
-		fill: #0f0;
+		fill: spin(@couleur-flash-1 , 20*(360 / 24));
+		stroke: spin(@couleur-flash-1 , 20*(360 / 24));
 	}
 }
 
 .jonathan--neutre {
 	#g_cadre #cercle {
-		fill: #00f;
+		fill: spin(@couleur-flash-1 , 15*(360 / 24));
+		stroke: spin(@couleur-flash-1 , 15*(360 / 24));
 	}
 }
 
 .jonathan--triste {
 	#g_cadre #cercle {
-		fill: #f00;
+		fill: spin(@couleur-flash-1 , 12*(360 / 24));
+		stroke: spin(@couleur-flash-1 , 12*(360 / 24));
 	}
 }
 
@@ -203,6 +433,7 @@ body {
 		margin: 2vh 0;
 		font-size: 5vw;
 		cursor: pointer;
+		user-select: none;
 		transition: margin 0.4s, font-size 0.4s;
 		&:hover {
 			margin: ~"calc(2vh - 1.16vw) 0";

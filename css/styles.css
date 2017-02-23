@@ -14,7 +14,7 @@ body {
 }
 /* Ajout d'espace pour permettre le défilement */
 /* .parallax__layer--back {
-	padding: 100vh 0;
+  padding: 100vh 0;
 } */
 .parallax__layer {
   height: 100vh;
@@ -42,7 +42,8 @@ body {
 .parallax__group {
   position: relative;
   height: 100vh;
-  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
 }
 .parallax__layer {
   -webkit-transform-origin-x: 100%;
@@ -154,11 +155,23 @@ body {
   stroke-width: 5px;
   fill: none;
   cursor: pointer;
-  animation: descente 1s 0s infinite ease-out;
+  -webkit-animation: descente 1s 0s infinite ease-out;
+          animation: descente 1s 0s infinite ease-out;
 }
 .fleche-bas:hover {
-  animation: none;
+  -webkit-animation: none;
+          animation: none;
   max-height: 7vh;
+}
+@-webkit-keyframes descente {
+  from {
+    margin-top: 85vh;
+    opacity: 1;
+  }
+  to {
+    margin-top: 87vh;
+    opacity: 0.2;
+  }
 }
 @keyframes descente {
   from {
@@ -182,11 +195,23 @@ body {
   stroke-width: 5px;
   fill: none;
   cursor: pointer;
-  animation: montee 1s 0s infinite ease-out;
+  -webkit-animation: montee 1s 0s infinite ease-out;
+          animation: montee 1s 0s infinite ease-out;
 }
 .fleche-haut:hover {
-  animation: none;
+  -webkit-animation: none;
+          animation: none;
   max-height: 7vh;
+}
+@-webkit-keyframes montee {
+  from {
+    margin-top: 52.5vh;
+    opacity: 1;
+  }
+  to {
+    margin-top: 50.5vh;
+    opacity: 0.2;
+  }
 }
 @keyframes montee {
   from {
@@ -209,8 +234,11 @@ body {
   fill: #25bfd8;
   stroke: #25bfd8;
   stroke-width: 20px;
-  transform: rotate(45deg);
-  transform-origin: 50% 50%;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-transition: fill 1s, stroke 1s;
   transition: fill 1s, stroke 1s;
 }
 .jonathan-flat .cls-3 {
@@ -223,7 +251,8 @@ body {
   fill: #d6c1ba;
 }
 .jonathan-flat .cls-6 {
-  clip-path: url(#clip-path);
+  -webkit-clip-path: url(#clip-path);
+          clip-path: url(#clip-path);
 }
 .jonathan-flat .cls-7 {
   opacity: 0.04;
@@ -266,7 +295,10 @@ body {
 }
 .jonathan-flat .sourcils {
   fill: #a0835d;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
   transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
 }
 .jonathan-flat #cheveux {
   fill: #a0835d;
@@ -278,37 +310,44 @@ body {
   fill: #e4e8ea;
 }
 .jonathan-flat .cls-23 {
-  clip-path: url(#clip-path-2);
+  -webkit-clip-path: url(#clip-path-2);
+          clip-path: url(#clip-path-2);
 }
 .jonathan-flat .cls-24 {
-  clip-path: url(#clip-path-3);
+  -webkit-clip-path: url(#clip-path-3);
+          clip-path: url(#clip-path-3);
 }
 .jonathan--content #g_cadre #cercle {
   fill: #25d83e;
   stroke: #25d83e;
 }
 .jonathan--content #sourcil_gauche {
-  transform: rotate(-5deg) translate(-18px, 8px);
+  -webkit-transform: rotate(-5deg) translate(-18px, 8px);
+          transform: rotate(-5deg) translate(-18px, 8px);
 }
 .jonathan--content #sourcil_droite {
-  transform: rotate(5deg) translate(16px, -45px);
+  -webkit-transform: rotate(5deg) translate(16px, -45px);
+          transform: rotate(5deg) translate(16px, -45px);
 }
 .jonathan--neutre #g_cadre #cercle {
   fill: #d8c425;
   stroke: #d8c425;
 }
 .jonathan--neutre #sourcil_droite {
-  transform: translate(0px, -10px);
+  -webkit-transform: translate(0px, -10px);
+          transform: translate(0px, -10px);
 }
 .jonathan--triste #g_cadre #cercle {
   fill: #d83e25;
   stroke: #d83e25;
 }
 .jonathan--triste #sourcil_gauche {
-  transform: rotate(-10deg) translate(-35px, 45px);
+  -webkit-transform: rotate(-10deg) translate(-35px, 45px);
+          transform: rotate(-10deg) translate(-35px, 45px);
 }
 .jonathan--triste #sourcil_droite {
-  transform: rotate(3deg) translate(3px, -25px);
+  -webkit-transform: rotate(3deg) translate(3px, -25px);
+          transform: rotate(3deg) translate(3px, -25px);
 }
 /* Autres styles
 --------------------------------------------- */
@@ -320,19 +359,38 @@ body {
   left: calc(50vw - 28.888vh);
 }
 .comp {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 .comp .comp__layout {
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .comp .layout-left,
 .comp .layout-right {
@@ -343,7 +401,9 @@ body {
 .comp .layout-center {
   max-width: 50vh;
   width: 33.333vw;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .comp .layout-center .comp-matiere {
   text-align: center;
@@ -355,7 +415,9 @@ body {
   color: #d83e25;
 }
 .comp .layout-left {
-  align-items: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   padding-right: 1rem;
 }
 .comp .layout-left .comp__matiere {
@@ -374,7 +436,9 @@ body {
   color: #d8c425;
 }
 .comp .layout-right {
-  align-items: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   padding-left: 1rem;
 }
 .comp .layout-right .comp__matiere {
@@ -397,7 +461,11 @@ body {
   margin: 2vh 0;
   font-size: 5vw;
   cursor: pointer;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: margin 0.4s, font-size 0.4s;
   transition: margin 0.4s, font-size 0.4s;
 }
 .comp .comp__matiere:hover {
